@@ -15,7 +15,7 @@
     <input type="text" name="nom" id="nom" placeholder="Nom" />
     <div class="verify">
         <input type="text" name="identifiant" id="identifiant" placeholder="Identifiant" onchange="identifiantChange()"/>
-        <label id="identifiantError" class="error">Identifiant 12 lettres au moins</label>
+        <label id="identifiantError" class="error">Identifiant de 12 lettres au moins</label>
     </div>
     <input type="text" name="email" id="email" placeholder="E-mail" />
     <div class="verify">
@@ -39,7 +39,7 @@
     </div>
     <div class="checkbox" >
         <input type="checkbox" name="subscribe" id="subscribe" onchange="CGUChange()">
-        <label>J'accepte les conditions générales d'utilisation de la plateforme</label><br/>
+        <label>J'accepte les <abbr title="Conditions Générales d'Utilisation">CGU</abbr>.</label><br/>
         <label id="CGUError" class="error">Vous devez acceptez les conditions</label>
     </div>
     <button type="submit" name="signup_submit" id="submit" onclick="clickHere()">S'inscrire</button>
@@ -52,7 +52,7 @@
     <button class="social-signin twitter">Inscrirption via Twitter</button>
     <button class="social-signin google">Inscrirption via Google+</button>
   </div>
-  <div class="or">OR</div>
+  <div class="or">OU</div>
 </div>
 </body>
 
