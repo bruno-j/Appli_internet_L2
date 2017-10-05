@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- META -->
+	<title>DAI – TP1 – Validation de formulaires en Javascript</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart/css/kickstart.css"
+	  media="all" />
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart_postBJ.css"
+	  rel="stylesheet">
+	<link rel="stylesheet" href="//cdn.getkickstart.com/css/kickstart.min.css" />
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/Prism/themes/prism.css"
+	  rel="stylesheet">
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/prism_postBJ.css" rel="stylesheet">
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/bjstyle.css" rel="stylesheet"> </head>
+<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/bjstyle_print.css"
+  rel="stylesheet" media="print"> </head>
+
+<body class="language-javascript">
+	<nav class="navbar inc:navbar.html"> </nav>
+	<article>
+		<div class="grid flex">
+			<div class="col_12">
+				<h1>TP1 – Création et validation d'un formulaire en JavaScript</h1>
+				<h2>Introduction</h2>
+				<p>L'objectif de ce TP est de construire et de valider dynamiquement un formulaire
+					en Javascript.</p>
+				<p>Dans ce TP vous verrez comment :
+					<ul>
+						<li>détecter une action sur un champ d'un formulaire ;</li>
+						<li>utiliser les expressions régulières ;</li>
+						<li>agir dynamiquement sur le
+							<i>DOM</i> ou le
+							<i>CSS</i>.</li>
+					</ul>
+				</p>
+				<h2>Environnement de développement</h2>
+				<p>Vous aurez besoin :
+					<ul>
+						<li>d'un éditeur de code pour HTML, CSS et Javascript :
+							<code class="language-none">gedit</code>,
+							<code class="language-none">sublime-text</code>,
+							<code class="language-none">atom</code>. </li>
+						<li>de la
+							<b>console Javascript</b> du navigateur pour afficher :
+							<ul>
+								<li>les messages d'erreur</li>
+								<li>et la sortie de la fonction
+									<code>console.log()</code>
+								</li>
+							</ul> raccourcis pour accéder à la console :
+							<ul class="language-none">
+								<li>Sous Firefox :
+									<code>Ctrl-Maj-K</code>
+								</li>
+								<li>Sous Chrome :
+									<code>Ctrl-Maj-J</code>
+								</li>
+							</ul>
+						</li>
+						<li>Notez qu'il est possible d'éditer le code Javascript directement dans Chrome
+							:
+							<code class="language-none">Ctrl-Maj-I</code>
+						</li>
+					</ul>
+				</p>
+				<h2>Bonnes pratiques</h2>
+				<p>Voici quelques règles pour écrire
+					<i>proprement</i> du code Javascript :
+					<ul>
+						<li>Externaliser le plus possible le code Javascript dans des fichiers
+							<code>.js</code> liés au document HTML :
+							<div><pre><code class='language-markup'>&lt;script type="text/javascript" src="./code.js">&lt;/script></code></pre></div>
+						</li>
+						<li>Écrire le code Javascript de manière modulaire en le structurant en autant
+							de fonctions que nécessaires pour les maintenir courtes (pas plus de 20-30
+							lignes idéalement) ;</li>
+						<li>Ces fonctions sont appelées dans un "script principal" dans la page HTML :
+							<div><pre><code class='language-markup'>&lt;script>
+  var entier = 2;
+  var resultat = carre(entier); // appel de ma fonction "carre";
+  var message = "le carre de " + entier + " est " + resultat;
+  console.log(message); // affichage dans la console
+&lt;/script></code></pre></div>
+						</li>
+					</ul>
+				</p>
+				<h2>Pour commencer ...</h2>
+				<p class='language-none'> Dans ce TP, vous complèterez un formulaire dont la structure et la présentation
+					sont déjà faites :
+					<a href="./Assets/TP1/form.html">
+						<code>form.html</code>
+					</a> et
+					<a href="./Assets/TP1/form.css">
+						<code>form.css</code>
+					</a>. </p>
+				<br/>
+				<ol>
+					<li>Copiez ces deux fichiers dans un dossier
+						<code class='language-none'>L2/DAI/TP1/</code> ;</li>
+					<li>Visualisez le formulaire dans votre navigateur Web et assurez-vous que la feuille
+						de style est bien prise en compte.</li>
+				</ol>
+				<h2>Entrainements</h2>
+				<h3>A - Réagir aux événements sur le bouton</h3>
+				<ol>
+					<li> Affichez un message à la console lorsque l'utilisateur clique sur le bouton
+						de soumission du formulaire.
+						<br/> Vous pourrez vous inspirer de
+						<a href="https://www.w3schools.com/jsref/event_onclick.asp">ceci</a>. </li>
+					<li> Lancez une alerte qui affiche le message précédent lorsque le bouton est cliqué.
+						<br/> Vous pourrez vous inspirer de
+						<a href="https://www.w3schools.com/jsref/met_win_alert.asp">ceci</a>. </li>
+					<li> Recupérez le contenu du bouton et affichez le à la console.
+						<br/> Vous pourrez vous inspirer de
+						<a href="https://developer.mozilla.org/fr/docs/Web/API/Document/getElementById">ceci</a>. </li>
+					<li> Grisez le bouton de soumission du formulaire </li>
+				</ol>
+				<br/>
+				<br/>
+				<h3>B - Vérifier la validité des champs</h3>
+				<p> Ecrivez des fonctions qui permettent de vérifier si :
+					<ol>
+						<li> L'âge saisi est supérieur ou égal à 18.
+							<br/>
+							<strong>NB : </strong>La fonction
+							<a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur</a> permet de détecter des changements dans un élément du DOM. </li>
+						<li> L'identifiant a au moins 12 caractères constitués juste de lettres.
+							<br/>
+							<strong>NB : </strong>La fonction
+							<a href="https://www.w3schools.com/jsref/jsref_regexp_test.asp">test</a> permet de tester si une chaîne de caractères vérifie une
+							<a href="https://msdn.microsoft.com/fr-fr/library/ae5bf541(v=vs.100).aspx">expression régulière</a> ; </li>
+						<li> Ajouter dans le DOM un élément HTML de type
+							<a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">barre de progression</a>. Son objectif est de jauger la force du mot de passe.
+							Chacun des critères ci-dessous contribue à 20% dans la force du mot de passe,
+							qui doit contenir :
+							<ul>
+								<li>au moins 8 caractères</li>
+								<li>au moins une lettre minuscule</li>
+								<li>au moins une lettre majuscule</li>
+								<li>au moins un chiffre</li>
+								<li>au moins un caractère qui n'est pas une lettre ni un chiffre</li>
+							</ul>
+							<br/> Les couleurs de la barre dépendent de la force du mot de passe :
+							<ul>
+								<li>En dessous de 40%, la barre est rouge</li>
+								<li>De 40% à 70%, la barre est orange</li>
+								<li>En dessus de 70%, la barre est verte</li>
+							</ul>
+						</li>
+						<li> Rajouter une fonction qui permet de tester si les deux mots de passe saisis
+							par l'utilisateur sont identiques. </li>
+						<li> Écrivez une fonction qui vérifie si l'utilisateur a accepté les conditions
+							générales d'utilisation (CGU). </li>
+					</ol>
+				</p>
+				<br/>
+				<h3>C- Guider l'utilisateur</h3>
+				<p> Dans la cas où l'utilisateur n'a pas rempli correctement le formulaire :
+					<ul>
+						<li>ajouter en dessous du champ un texte qui spécifie l'erreur ;</li>
+						<li>ce texte doit apparaitre en rouge avec une petite police ;</li>
+						<li>une fois que l'erreur est corrigée, le texte disparaît ;</li>
+						<li>si aucune erreur détectée, le bouton se dégrise.</li>
+					</ul>
+					<strong>NB : </strong> pour faire disparaître un élément d'id
+					<i>myID</i> du DOM d'une page, il suffit de faire :
+					<div><pre><code class='language-markup'>&lt;script>
+   document.getElementById('myID').style.display = 'none'
+&lt;/script></code></pre></div> Pour le faire apparaître, remplacer
+					<i>'none'</i> par
+					<i>'inline'</i>
+				</p>
+			</div>
+			<!-- End Grid -->
+	</article>
+	<!-- Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- <script src="http://bjobard.perso.univ-pau.fr/Assets/Scripts/jquery-2.1.4.min.js"></script> -->
+	<script src="http://bjobard.perso.univ-pau.fr/Assets/Scripts/jquery.inc-7.js"></script>
+	<script type="text/javascript" src="http://bjobard.perso.univ-pau.fr/Assets/Styles/Prism/prism.js"></script>
+	<script type="text/javascript" src="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart/js/kickstart.js"></script>
+</body>
+
+</html>

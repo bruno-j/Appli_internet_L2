@@ -1,13 +1,5 @@
 window.onload = main;
 
-var barLevel = 0; // 0 %
-var cond1 = false
-var cond2 = false
-var cond3 = false
-var cond4 = false
-var cond5 = false
-
-
 function init() {
   let elt = document.querySelector("h1");
   elt.style.color = "red";
