@@ -72,28 +72,6 @@
 					</ul>
 				</p>
 				<!-- --------------------------------------------------------------- -->
-				<!-- <h2>Bonnes pratiques</h2>
-				<p>Voici quelques règles pour écrire
-					<i>proprement</i> du code Javascript :
-					<ul>
-						<li>Externaliser le plus possible le code Javascript dans des fichiers
-							<code>.js</code> liés au document HTML :
-							<div><pre><code class='language-markup'>&lt;script type="text/javascript" src="./code.js">&lt;/script></code></pre></div>
-						</li>
-						<li>Écrire le code Javascript de manière modulaire en le structurant en autant
-							de fonctions que nécessaires pour les maintenir courtes (pas plus de 20-30
-							lignes idéalement) ;</li>
-						<li>Ces fonctions sont appelées dans un "script principal" dans la page HTML :
-							<div><pre><code class='language-markup'>&lt;script>
-  var entier = 2;
-  var resultat = carre(entier); // appel de ma fonction "carre";
-  var message = "le carre de " + entier + " est " + resultat;
-  console.log(message); // affichage dans la console
-&lt;/script></code></pre></div>
-						</li>
-					</ul>
-				</p> -->
-				<!-- --------------------------------------------------------------- -->
 				<h2>Exercice</h2>
 				<p class='language-none'> Pour ce TP, nous vous fournissons
 					<a href="./Assets/TP1/form.html">un formulaire</a> dont la structure et la présentation sont déjà faites. Vous
@@ -124,23 +102,6 @@
 					de sa validité (événement "blur").</p>
 				<!-- --------------------------------------------------------------- -->
 				<!-- <h2>Entrainements</h2> -->
-				<!-- --------------------------------------------------------------- -->
-				<!-- <h3>A - Réagir aux événements sur le bouton</h3>
-				<ol>
-					<li> Affichez un message à la console lorsque l'utilisateur clique sur le bouton
-						de soumission du formulaire.
-						<br/> Vous pourrez vous inspirer de
-						<a href="https://www.w3schools.com/jsref/event_onclick.asp">ceci</a>. </li>
-					<li> Lancez une alerte qui affiche le message précédent lorsque le bouton est cliqué.
-						<br/> Vous pourrez vous inspirer de
-						<a href="https://www.w3schools.com/jsref/met_win_alert.asp">ceci</a>. </li>
-					<li> Recupérez le contenu du bouton et affichez le à la console.
-						<br/> Vous pourrez vous inspirer de
-						<a href="https://developer.mozilla.org/fr/docs/Web/API/Document/getElementById">ceci</a>. </li>
-					<li> Grisez le bouton de soumission du formulaire </li>
-				</ol>
-				<br/>
-				<br/> -->
 				<!-- --------------------------------------------------------------- -->
 				<h3>Vérifier la validité des champs</h3>
 				<p>Pour cela, vous écrirez des couples de fonction
@@ -190,23 +151,27 @@
 					</ol>
 				</p>
 				<!-- --------------------------------------------------------------- -->
-				<!-- <h3>C- Guider l'utilisateur</h3>
-				<p> Dans la cas où l'utilisateur n'a pas rempli correctement le formulaire :
-					<ul>
-						<li>ajouter en dessous du champ un texte qui spécifie l'erreur ;</li>
-						<li>ce texte doit apparaitre en rouge avec une petite police ;</li>
-						<li>une fois que l'erreur est corrigée, le texte disparaît ;</li>
-						<li>si aucune erreur détectée, le bouton se dégrise.</li>
-					</ul>
-					<strong>NB : </strong> pour faire disparaître un élément d'id
-					<i>myID</i> du DOM d'une page, il suffit de faire :
-					<div><pre><code class='language-markup'>&lt;script>
-   document.getElementById('myID').style.display = 'none'
-&lt;/script></code></pre></div> Pour le faire apparaître, remplacer
-					<i>'none'</i> par
-					<i>'inline'</i>
-				</p> -->
-			</div>
+				<h3>Conseils pour la programmation</h3>
+				<ul>
+					<li>Toujours vérifier ce qui s'affiche dans la console. Si une erreur est reportée,
+						la corriger avant de poursuivre.</li>
+					<li>Programmez de manière incrémentale : écrivez quelques instructions et vérifiez
+						qu'elles produisent bien l'effet escompté.</li>
+					<li>Assurez-vous que les variables que vous manipulez contiennent bien la valeur
+						que vous pensez. Affichez-les avec
+						<code>console.log()</code> pour en être sûr.</li>
+				</ul>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br /> </div>
 			<!-- End Grid -->
 	</article>
 	<!-- Javascript -->
