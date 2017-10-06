@@ -25,22 +25,19 @@
 	<article>
 		<div class="grid flex">
 			<div class="col_12">
-				<!-- --------------------------------------------------------------- -->
-				<h1>TP1 – Validation des champs d'un formulaire en JavaScript</h1>
-				<!-- --------------------------------------------------------------- -->
+				<h1>TP1 – Création et validation d'un formulaire en JavaScript</h1>
 				<h2>Introduction</h2>
-				<p>L'objectif de ce TP est vérifier la conformité des champs d'un formulaire en
-					Javascript dans le navigateur avant de l'envoyer.</p>
+				<p>L'objectif de ce TP est de construire et de valider dynamiquement un formulaire
+					en Javascript.</p>
 				<p>Dans ce TP vous verrez comment :
 					<ul>
 						<li>détecter une action sur un champ d'un formulaire ;</li>
-						<li>utiliser les expressions rationnelles ;</li>
+						<li>utiliser les expressions régulières ;</li>
 						<li>agir dynamiquement sur le
-							<i>DOM</i> et le
+							<i>DOM</i> ou le
 							<i>CSS</i>.</li>
 					</ul>
 				</p>
-				<!-- --------------------------------------------------------------- -->
 				<h2>Environnement de développement</h2>
 				<p>Vous aurez besoin :
 					<ul>
@@ -71,8 +68,7 @@
 						</li>
 					</ul>
 				</p>
-				<!-- --------------------------------------------------------------- -->
-				<!-- <h2>Bonnes pratiques</h2>
+				<h2>Bonnes pratiques</h2>
 				<p>Voici quelques règles pour écrire
 					<i>proprement</i> du code Javascript :
 					<ul>
@@ -92,40 +88,25 @@
 &lt;/script></code></pre></div>
 						</li>
 					</ul>
-				</p> -->
-				<!-- --------------------------------------------------------------- -->
-				<h2>Exercice</h2>
-				<p class='language-none'> Pour ce TP, nous vous fournissons
-					<a href="./Assets/TP1/form.html">un formulaire</a> dont la structure et la présentation sont déjà faites. Vous
-					n'aurez pas besoin de les modifier. Par contre, il vous faudra compléter le
-					code JavaScript.</p>
-				<p>Pour commencer, téléchargez les fichiers
+				</p>
+				<h2>Pour commencer ...</h2>
+				<p class='language-none'> Dans ce TP, vous complèterez un formulaire dont la structure et la présentation
+					sont déjà faites :
 					<a href="./Assets/TP1/form.html">
 						<code>form.html</code>
-					</a>,
+					</a> et
 					<a href="./Assets/TP1/form.css">
 						<code>form.css</code>
-					</a>et
-					<a href="./Assets/TP1/form.js">
-						<code>form.js</code>
-					</a> dans un dossier
-					<code class='language-none'>L2/DAI/TP1/</code>.</p>
-				<p>Visualisez le formulaire dans votre navigateur Web et assurez-vous que la feuille
-					de style est bien prise en compte.</p>
-				<!-- --------------------------------------------------------------- -->
-				<h3>Comportement du formulaire</h3>
-				<p>Un clic sur le bouton "s'inscrire" déclenche les tests de validation des champs
-					du formulaire.</p>
-				<p>Quand le contenu d'un champ n'est pas correct, un message d'erreur s'affiche
-					sous le champ.</p>
-				<p>Le script fourni affiche tous les messages d'erreur en cas de clic sur le bouton.
-					Mais seul la vérification du champ "Identifiant" a été implémentée.</p>
-				<p>Quand un champ a été saisi, le fait de quitter ce champ déclenche la vérification
-					de sa validité (événement "blur").</p>
-				<!-- --------------------------------------------------------------- -->
-				<!-- <h2>Entrainements</h2> -->
-				<!-- --------------------------------------------------------------- -->
-				<!-- <h3>A - Réagir aux événements sur le bouton</h3>
+					</a>. </p>
+				<br/>
+				<ol>
+					<li>Copiez ces deux fichiers dans un dossier
+						<code class='language-none'>L2/DAI/TP1/</code> ;</li>
+					<li>Visualisez le formulaire dans votre navigateur Web et assurez-vous que la feuille
+						de style est bien prise en compte.</li>
+				</ol>
+				<h2>Entrainements</h2>
+				<h3>A - Réagir aux événements sur le bouton</h3>
 				<ol>
 					<li> Affichez un message à la console lorsque l'utilisateur clique sur le bouton
 						de soumission du formulaire.
@@ -140,42 +121,30 @@
 					<li> Grisez le bouton de soumission du formulaire </li>
 				</ol>
 				<br/>
-				<br/> -->
-				<!-- --------------------------------------------------------------- -->
-				<h3>Vérifier la validité des champs</h3>
-				<p>Pour cela, vous écrirez des couples de fonction
-					<code>valider...()</code> et
-					<code>vérifer...()</code>. Un premier exemple est donné dans le code pour la vérification
-					et la validation de l'identifiant qui doit avoir au moins 12 caractères constitués
-					juste de lettres. </p>
-				<p>Pour faire cette vérification, nous avons utilisé la fonction
-					<a href="https://www.w3schools.com/jsref/jsref_regexp_test.asp">
-						<code>test()</code>
-					</a> qui permet de tester si une chaîne de caractères vérifie une
-					<a href="https://msdn.microsoft.com/fr-fr/library/ae5bf541(v=vs.100).aspx">expressions rationnelles.</a>
-				</p>
-				<p> Vous écrirez les fonctions qui permettent de vérifier si :
+				<br/>
+				<h3>B - Vérifier la validité des champs</h3>
+				<p> Ecrivez des fonctions qui permettent de vérifier si :
 					<ol>
 						<li> L'âge saisi est supérieur ou égal à 18.
+							<br/>
+							<strong>NB : </strong>La fonction
+							<a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur</a> permet de détecter des changements dans un élément du DOM. </li>
+						<li> L'identifiant a au moins 12 caractères constitués juste de lettres.
+							<br/>
+							<strong>NB : </strong>La fonction
+							<a href="https://www.w3schools.com/jsref/jsref_regexp_test.asp">test</a> permet de tester si une chaîne de caractères vérifie une
+							<a href="https://msdn.microsoft.com/fr-fr/library/ae5bf541(v=vs.100).aspx">expression régulière</a> ; </li>
+						<li> Ajouter dans le DOM un élément HTML de type
+							<a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">barre de progression</a>. Son objectif est de jauger la force du mot de passe.
+							Chacun des critères ci-dessous contribue à 20% dans la force du mot de passe,
+							qui doit contenir :
 							<ul>
-								<li>
-									<b>Attention :</b> "vingt ans" n'est pas correct !</li>
+								<li>au moins 8 caractères</li>
+								<li>au moins une lettre minuscule</li>
+								<li>au moins une lettre majuscule</li>
+								<li>au moins un chiffre</li>
+								<li>au moins un caractère qui n'est pas une lettre ni un chiffre</li>
 							</ul>
-						</li>
-						<li>Le mot de passe doit être constitué d'au moins :
-							<ul class="language-javascript">
-								<li>8 caractères</li>
-								<li>une lettre minuscule (expression rationnelle :
-									<code>/[a-z]/</code>)</li>
-								<li>une lettre majuscule</li>
-								<li>un chiffre</li>
-								<li>un caractère qui n'est pas une lettre ni un chiffre</li>
-							</ul>
-						</li>
-						<li> La longueur de la barre de progression dépend de la force du mot de passe.
-							(exemple :
-							<a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">barre de progression</a>).
-							<br/> Chacun des critères ci-dessus contribue à 20% dans la force du mot de passe.
 							<br/> Les couleurs de la barre dépendent de la force du mot de passe :
 							<ul>
 								<li>En dessous de 40%, la barre est rouge</li>
@@ -183,14 +152,14 @@
 								<li>En dessus de 70%, la barre est verte</li>
 							</ul>
 						</li>
-						<li> Testez si les deux mots de passe saisis par l'utilisateur sont identiques.
-							</li>
-						<li> Vérifiez si l'utilisateur a accepté les conditions générales d'utilisation
-							(CGU). </li>
+						<li> Rajouter une fonction qui permet de tester si les deux mots de passe saisis
+							par l'utilisateur sont identiques. </li>
+						<li> Écrivez une fonction qui vérifie si l'utilisateur a accepté les conditions
+							générales d'utilisation (CGU). </li>
 					</ol>
 				</p>
-				<!-- --------------------------------------------------------------- -->
-				<!-- <h3>C- Guider l'utilisateur</h3>
+				<br/>
+				<h3>C- Guider l'utilisateur</h3>
 				<p> Dans la cas où l'utilisateur n'a pas rempli correctement le formulaire :
 					<ul>
 						<li>ajouter en dessous du champ un texte qui spécifie l'erreur ;</li>
@@ -205,7 +174,7 @@
 &lt;/script></code></pre></div> Pour le faire apparaître, remplacer
 					<i>'none'</i> par
 					<i>'inline'</i>
-				</p> -->
+				</p>
 			</div>
 			<!-- End Grid -->
 	</article>
