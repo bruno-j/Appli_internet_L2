@@ -1,0 +1,44 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.flux {background-color: yellow;}
+
+.titres {background-color: green;}
+
+.article {background-color: lightblue;}
+
+.flux, .titres, .article  {
+  padding: 10px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+  height: 100vh;
+}
+
+.flux {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 200px;
+}
+
+.titres {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 200px;
+}
+
+.article {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+
+#article_frame {
+  height: 90%;
+}
