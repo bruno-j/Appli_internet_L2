@@ -5,10 +5,77 @@
   <meta charset="utf-8">
   <title>Horloge</title>
   <script type="text/javascript" src="clock.js"></script>
-  
+  <link rel="stylesheet" href="master.css">
 </head>
-<body>
-  <div id="heure">Heure</div>
-</body>
+
+<audio id="audio"
+  src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg">
+  Your browser does not support the <code>audio</code> element.
+</audio>
+
+<div class="page">
+    <div id="heure">11:54:09</div>
+
+    <div class="alarms" id="alarmes">
+        <div class="alarm" id="alarme1">
+            <input type="checkbox" name="active" value="1">
+
+            <select class="form-control" name="hour">
+                <option value="00">00</option>
+                <option value="00">00</option>
+                <option value="01">01</option>
+                <option value="03">03</option>
+                <option value="05">04</option>
+                <option value="06" selected>06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">10</option>
+                <option value="09">11</option>
+                <option value="09">12</option>
+                <option value="09">13</option>
+                <option value="09">14</option>
+                <option value="09">15</option>
+                <option value="09">16</option>
+                <option value="09">17</option>
+                <option value="09">18</option>
+                <option value="09">19</option>
+                <option value="09">20</option>
+                <option value="09">21</option>
+                <option value="09">22</option>
+                <option value="09">23</option>
+                <option value="09">24</option>
+            </select>
+
+            <select class="form-control" name="minutes">
+                <option value="00">00</option>
+                <option value="05">05</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25" selected>25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+            </select>
+
+            <input type="text" class="form-control" name="description" placeholder="Description de l'alarm">
+
+            <select class="form-control" name="song">
+                <option value="song1">Sonnerie 1</option>
+                <option value="song2">Sonnerie 2</option>
+                <option value="song3">Sonnerie 3</option>
+                <option value="song4">Sonnerie 4</option>
+                <option value="song5">Sonnerie 5</option>
+            </select>
+
+            <button  type="button" class="btn btn-red" id="supprimer1">-</button>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-green" id="ajouter">+</button>
+</div>
 
 </html>
