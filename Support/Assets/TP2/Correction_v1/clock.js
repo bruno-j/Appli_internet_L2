@@ -5,7 +5,7 @@
 */
 window.addEventListener("load", function() {
 
-  majHeure(); // faire des tests d'accès et de modification du DOM
+  majHeure();
 
   abonnements(); // abonnenement aux événements d'alarme
 });

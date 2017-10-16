@@ -41,5 +41,5 @@ function abonnements() {
 function init() {
 
   let elt = document.getElementById("article_frame");
-  elt.src = "https://www.egaliteetreconciliation.fr/A-la-decouverte-de-la-Coree-du-Nord-le-documentaire-en-acces-libre-47516.html";
+  elt.src = "http://linuxfr.org/news/quelques-nouvelles-de-luneos";
 }
