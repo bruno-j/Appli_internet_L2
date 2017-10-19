@@ -6,26 +6,24 @@
   <title>Lecteur de flux</title>
   <script type="text/javascript" src="./lecteur.js"></script>
   <link href="./lecteur.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.min.css"/>
-
-</head>
+  <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.min.css"
+  /> </head>
 
 <body>
   <section>
-    <aside class="flux">
+    <aside class="feeds">
       <h2>Flux</h2>
       <ul>
-        <li>flux 1</li>
-        <li>flux 2</li>
-        <li>flux 3</li>
+        <li name="1">flux 1</li>
       </ul>
       <div>
         <input type="text" />
-        <input type="button" value="+" />
-      </div>
+        <input type="button" value="+" /> </div>
     </aside>
-    <aside class="titres">
-      <h2>Titres   <i class="fa fa-refresh" aria-hidden="true"></i></h2>
+    <aside class="titles">
+      <h2>Titres
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+      </h2>
       <ul>
         <li>titre 1</li>
         <li>titre 2</li>
@@ -34,13 +32,14 @@
         <li>titre 5</li>
       </ul>
       <div>
-        <input type="button" value="Mettre à jour" />
-      </div>
+        <input type="button" value="Mettre à jour" /> </div>
     </aside>
     <article class="article">
       <h2>Article</h2>
-      <iframe id="article_frame" src="article_vide.html" frameborder="1"
-        scrolling="auto" width="100%"></iframe>
+      <div id="article_content">
+        <iframe id="article_frame" src="article_vide.html" frameborder="1" scrolling="auto"
+          width="100%"></iframe>
+      </div>
     </article>
   </section>
 </body>

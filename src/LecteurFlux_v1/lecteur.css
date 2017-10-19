@@ -4,13 +4,13 @@ body {
   margin: 0;
 }
 
-.flux {background-color: yellow;}
+.feeds {_background-color: yellow;}
 
-.titres {background-color: green;}
+.titles {_background-color: green;}
 
-.article {background-color: lightblue;}
+.article {_background-color: lightblue;}
 
-.flux, .titres, .article  {
+.feeds, .titles, .article  {
   padding: 10px;
 }
 
@@ -21,24 +21,38 @@ section {
   height: 100vh;
 }
 
-.flux {
+.feeds {
   grid-column: 1;
   grid-row: 1;
-  min-width: 200px;
+  min-width: 300px;
+  min-height: 200px;
+  height: 40vh;
+  overflow: auto;
 }
 
-.titres {
+
+.titles {
   grid-column: 1;
   grid-row: 2;
-  min-width: 200px;
+  min-width: 300px;
+  min-height: 200px;
+  height: 40vh;
+  overflow: auto;
 }
 
 .article {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
 }
 
+#article_content {
+  height: 100%;
+}
 
 #article_frame {
   height: 90%;
+}
+
+.feeds li, .titles li {
+  cursor: pointer;
 }
