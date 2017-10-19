@@ -18,48 +18,14 @@
 
     <div class="alarms" id="alarmes">
         <div class="alarm" id="alarme1">
-            <input type="checkbox" name="active" value="1">
+            <input class = 'checkbox' type="checkbox" name="active" value="1" id="checkbox1">
 
-            <select class="form-control" name="hour">
-                <option value="00">00</option>
-                <option value="00">00</option>
-                <option value="01">01</option>
-                <option value="03">03</option>
-                <option value="05">04</option>
-                <option value="06" selected>06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="07">09</option>
-                <option value="09">10</option>
-                <option value="09">11</option>
-                <option value="09">12</option>
-                <option value="09">13</option>
-                <option value="09">14</option>
-                <option value="09">15</option>
-                <option value="09">16</option>
-                <option value="09">17</option>
-                <option value="09">18</option>
-                <option value="09">19</option>
-                <option value="09">20</option>
-                <option value="09">21</option>
-                <option value="09">22</option>
-                <option value="09">23</option>
-                <option value="09">24</option>
+            <select class="form-control heure" name="hour" id="selectHeure">
+
             </select>
 
-            <select class="form-control" name="minutes">
-                <option value="00">00</option>
-                <option value="05">05</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="25" selected>25</option>
-                <option value="30">30</option>
-                <option value="35">35</option>
-                <option value="40">40</option>
-                <option value="45">45</option>
-                <option value="50">50</option>
-                <option value="55">55</option>
+            <select class="form-control minute" name="minutes" id="selectMinute">
+
             </select>
 
             <input type="text" class="form-control" name="description" placeholder="Description de l'alarm">
