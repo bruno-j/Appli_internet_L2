@@ -5,44 +5,33 @@
   <meta charset="utf-8">
   <title>Horloge</title>
   <script type="text/javascript" src="clock.js"></script>
-  <link rel="stylesheet" href="master.css">
-</head>
-
-<audio id="audio"
+  <link rel="stylesheet" href="master.css"> </head>
+<!-- <audio id="audio"
   src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg">
   Your browser does not support the <code>audio</code> element.
-</audio>
-
+</audio> -->
+<audio id="audio" src=""> Your browser does not support the
+  <code>audio</code> element. </audio>
 <div class="page">
-    <div id="heure">11:54:09</div>
-
-    <div class="alarms" id="alarmes">
-        <div class="alarm" id="alarme1">
-            <input class = 'checkbox' type="checkbox" name="active" value="1" id="checkbox1">
-
-            <select class="form-control heure" name="hour" id="selectHeure">
-
-            </select>
-
-            <select class="form-control minute" name="minutes" id="selectMinute">
-
-            </select>
-
-            <input type="text" class="form-control" name="description" placeholder="Description de l'alarm">
-
-            <select class="form-control" name="song">
-                <option value="song1">Sonnerie 1</option>
-                <option value="song2">Sonnerie 2</option>
-                <option value="song3">Sonnerie 3</option>
-                <option value="song4">Sonnerie 4</option>
-                <option value="song5">Sonnerie 5</option>
-            </select>
-
-            <button  type="button" class="btn btn-red" id="supprimer1">-</button>
-        </div>
+  <div id="heure">11:54:09</div>
+  <div class="alarms" id="alarmes">
+    <div class="alarm" id="alarme1">
+      <input class='checkbox' type="checkbox" name="active" value="1" id="checkbox1">
+      <select class="form-control heure" name="hour" id="selectHeure"> </select>
+      <select class="form-control minute" name="minutes" id="selectMinute">
+      </select>
+      <input type="text" class="form-control" name="description" placeholder="Description de l'alarm">
+      <select class="form-control" name="song">
+        <option value="song1">Sonnerie 1</option>
+        <option value="song2">Sonnerie 2</option>
+        <option value="song3">Sonnerie 3</option>
+        <option value="song4">Sonnerie 4</option>
+        <option value="song5">Sonnerie 5</option>
+      </select>
+      <button type="button" class="btn btn-red" id="supprimer1">-</button>
     </div>
-
-    <button type="button" class="btn btn-green" id="ajouter">+</button>
+  </div>
+  <button type="button" class="btn btn-green" id="ajouter">+</button>
 </div>
 
 </html>

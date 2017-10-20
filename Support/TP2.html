@@ -29,9 +29,44 @@
 				<h1>TP2 – Programmation événementielle</h1>
 				<!-- --------------------------------------------------------------- -->
 				<h2>Introduction</h2>
+				<p>L'objectif de ce TP est de manipuler les événements Javascript. </p>
+				<p>Nous programmerons une horloge munie d'alarmes configurables.</p>
+				<p>Nous commencerons avec une version simple que nous complèterons progressivement.</p>
 				<!-- --------------------------------------------------------------- -->
-				<h2>Exercice - Horloge</h2>
-				<p></p>
+				<h2>Exercice 1 - Horloge simple</h2>
+				<p class="language-none">Dans un dossier
+					<code>DAI/TP2/</code>, enregistrez les fichiers
+					<a href="./Assets/TP2/clock_v1.html">
+						<code>clock_v1.html</code>
+					</a>,
+					<a href="./Assets/TP2/clock.css">
+						<code>clock.css</code>
+					</a> et
+					<a href="./Assets/TP2/clock_v1.js">
+						<code>clock_v1.js</code>
+					</a>. </p>
+				<p>Modifiez le fichier
+					<code>clock_v1.js</code> selon les étapes suivantes.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 1 - Affichage de l'heure</h3>
+				<p>Afficher l'heure courante avec le format "hh:mm:ss" sur la page.</p>
+				<p>L'objet
+					<a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date">
+						<code>Date</code>
+					</a> possède des méthodes pour récupérer les heures, minutes et secondes.</p>
+				<p>Vous veillerez à formatter les valeurs numériques sur deux chiffres.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 2 - Mise à jour régulière de l'heure</h3>
+				<p>Vous utiliserez la fonction
+					<a href="https://developer.mozilla.org/fr/docs/Web/API/WindowTimers/setInterval">
+						<code>window.SetInterval</code>
+					</a> qui permet de lancer une fonction à intervalles réguliers.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 3 - Mise en place d'une pause</h3>
+				<p>Si la pause est enclenchée (propriété
+					<code>checked</code> de la
+					<code>checkbox</code>) alors la mise à jour régulière de l'heure est suspendue. Elle
+					reprend quand la pause est déselectionnée.</p>
 				<br />
 				<br />
 				<br />
