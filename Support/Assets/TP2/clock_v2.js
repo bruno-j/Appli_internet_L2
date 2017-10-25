@@ -163,9 +163,7 @@ function ajouterAlarme() {
   // Clone le premier fils de #alarmes
   let alarmesElt = document.getElementById("alarmes");
   let nouvelleAlarmeElt = alarmesElt.children[0].cloneNode();
-
-  // Recopier le contenu HTML (innerHTML) dans nouvelleAlarmeElt
-  // TODO
+  nouvelleAlarmeElt.innerHTML = "J'aimerais être une nouvelle alarme...";
 
   // dégrise les éléments éventuellement grisés
   // TODO
