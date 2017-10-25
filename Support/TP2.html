@@ -67,6 +67,54 @@
 					<code>checked</code> de la
 					<code>checkbox</code>) alors la mise à jour régulière de l'heure est suspendue. Elle
 					reprend quand la pause est déselectionnée.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h2>Exercice 2 - Horloge avec alarmes réglables</h2>
+				<p class="language-none">Dans le dossier
+					<code>DAI/TP2/</code>, enregistrez les fichiers
+					<a href="./Assets/TP2/clock_v2.html">
+						<code>clock_v2.html</code>
+					</a>,
+					<a href="./Assets/TP2/clock.css">
+						<code>clock.css</code>
+					</a> (oui, le remplacer) et
+					<a href="./Assets/TP2/clock_v2.js">
+						<code>clock_v2.js</code>
+					</a>. </p>
+				<p>Modifiez le fichier
+					<code>clock_v2.js</code> selon les étapes suivantes.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 1 - Affichage et pause de l'heure</h3>
+				<p>Dans le fichier
+					<code>clock_v2.js</code>, incorporez le code que vous avez écrit au cours de l'exercice
+					1 afin d'avoir l'affichage continu de l'heure et la possibilité de le mettre
+					en pause. </p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 2 - Remplissage des listes déroulantes</h3>
+				<p>Complétez les code afin de remplir les listes déroulante des heures et minutes,
+					par pas de 1.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 3 - Mise en place d'une première alarme</h3>
+				<p>Modifiez la fonction
+					<code>enclencherAlarme()</code> pour qu'une alarme se déclenche à l'heure choisie
+					quand la checkbox est selectionnée.</p>
+				<p>Une boite de dialogue apparaît alors et affiche la description correspondante.</p>
+				<p>La sélection de la checkbox grise les champs de l'alarme, qui ne sont plus modifiables.
+					Seul le bouton "Enlever alarme" reste cliquable.</p>
+				<p>La désélection de la checkbox :</p>
+				<ul>
+					<li>annule l'alarme qui avait été enclenchée ;</li>
+					<li>dégrise les champs de l'alarme.</li>
+				</ul>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 4 - Ajout d'alarmes supplémentaires</h3>
+				<p>Modifier le code afin que l'appui sur le bouton "Ajouter alarme" remplisse le
+					nouveau noeud inséré avec le code HTML de la première alarme.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 5 - Suppression d'alarmes</h3>
+				<p>En cliquant sur un bouton "Enlever alarme", la ligne correpondante disparaît.</p>
+				<p>Veillez toutefois à ce qu'il reste toujours au moins une alarme.</p>
+				<p>Quand une alarme est supprimée, elle doit désactiver l'alarme correspondante
+					qui avait éventuellement été enclenchée.</p>
 				<br />
 				<br />
 				<br />

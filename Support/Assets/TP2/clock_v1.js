@@ -15,12 +15,18 @@ window.addEventListener("load", function() {
 
 function abonnements() {
 
+  // la checkbox réagit à l'événement "click"
+
 }
 
 function afficheHeure() {
   let date = new Date();
-  let hhmmss = date.toString();
-  console.log(hhmmss);;
+  console.log(date.toString());
+
+  let h = 10;
+  let hhmmss = h+":"+h+":"+h;
+  let heureElt = document.getElementById("heure");
+  heureElt.textContent = hhmmss;
 }
 
 function majHeure() {
