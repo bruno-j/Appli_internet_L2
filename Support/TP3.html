@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- META -->
+	<title>DAI – TP3 – Programmation avec AJAX et stockage local</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart/css/kickstart.css"
+	  media="all" />
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart_postBJ.css"
+	  rel="stylesheet">
+	<link rel="stylesheet" href="//cdn.getkickstart.com/css/kickstart.min.css" />
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/Prism/themes/prism.css"
+	  rel="stylesheet">
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/prism_postBJ.css" rel="stylesheet">
+	<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/bjstyle.css" rel="stylesheet"> </head>
+<link href="http://bjobard.perso.univ-pau.fr/Assets/Styles/bjstyle_print.css"
+  rel="stylesheet" media="print"> </head>
+
+<body class="language-javascript">
+	<nav class="navbar inc:navbar.html"> </nav>
+	<article>
+		<div class="grid flex">
+			<div class="col_12">
+				<!-- --------------------------------------------------------------- -->
+				<h1>TP3 – Programmation avec AJAX
+					<br /> et stockage local</h1>
+				<!-- --------------------------------------------------------------- -->
+				<h2>Introduction</h2>
+				<p>Dans ce TP, nous ferons des requêtes au service de traduction de Google pour
+					traduire des mots ou des expressions depuis et vers des langues au choix.</p>
+				<p>Un récapitulatif de chaque requête faite à distance sera stockée localement.</p>
+				<p>Ainsi, les expressions déjà traduites pourront être présentées à l'utilisateur.
+					Si aucune ne le satisfait une nouvelle requête pourra être envoyée et le récapitulatif
+					sera ajouté au stockage local.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h2>Exercice - Traducteur en ligne</h2>
+				<p class="language-none">Dans un dossier
+					<code>DAI/TP3/</code>, enregistrez les fichiers
+					<a href="./Assets/TP3/traduction.html">
+						<code>traduction.html</code>
+					</a> et
+					<a href="./Assets/TP3/traduction.js">
+						<code>traduction.js</code>
+					</a>. </p>
+				<p>Votre mission est de faire évoluer l'application pour qu'elle ressemble à la
+					maquette ci-dessous :</p>
+				<div class="center">
+					<img class="caption" title="Fig1. Maquette de l'application de traduction." src="./Assets/TP3/maquette.png"
+					  alt="" /> </div>
+				<p>Pour cela, nous vous conseillons de suivre les étapes suivantes.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 0 - Examen du code fourni</h3>
+				<p>Le code est court, mais l'application sait déjà :</p>
+				<ul>
+					<li>charger les traductions qui ont été faites dans ce navigateur ;</li>
+					<li>interroger le service de traduction de Google en AJAX ;</li>
+					<li>sauver la traduction localement dans le stockage du navigateur.</li>
+				</ul>
+				<p>Pour l'instant la traduction est fixée du français vers l'anglais, mais vous
+					proposerez d'autres combinaisons.</p>
+				<div class="experiment">
+					<b>Testez :</b>
+					<ol>
+						<li>Saisissez "pomme" et appuyez sur traduire. La traduction "apple" apparaît.</li>
+						<li>Essayez avec "poire" ou le terme de votre choix.</li>
+						<li>Ouvrez la console Javascript, rechargez la page et constatez que les traductions
+							précédentes sont affichées dans la console.</li>
+					</ol>
+				</div>
+				<p>Le
+					<b>stockage local</b> permet de sauver des valeurs associées à une page web dans
+					un fichier géré par le navigateur. Ainsi d'une visite à l'autre, il est possible
+					de retrouver des informations qui avaient stockées.</p>
+				<p>Ce stockage s'effectue grâce à l'objet
+					<code>window.localStorage</code> qui possède les fonctions </p>
+				<ul>
+					<li>
+						<code>setItem("clé", "valeur")</code> pour sauver une valeur à une clé donnée ;</li>
+					<li>
+						<code>let val = getItem("clé")</code> qui récupère la valeur associée à la clé donnée.</li>
+				</ul>
+				<p>L'objet
+					<code>localStorage</code> admet deux autres méthodes intéressantes
+					<code>removeItem()</code> et
+					<code>clear()</code> (voir
+					<a href="https://developer.mozilla.org/fr/docs/Web/API/Storage">référence</a>).</p>
+				<p>Notez que les clés et les valeurs doivent être des chaînes de caractères. Pour
+					stocker un ensemble de traductions nous avons recours à la conversion d'objets
+					Javascript en chaînes de caractères (et vice versa) grâce aux fonctions :</p>
+				<ul>
+					<li>
+						<code>let chaine = JSON.stringify(objet)</code> et</li>
+					<li>
+						<code>let obj = JSON.parse(chaine)</code>.</li>
+				</ul>
+				<p>Vous remarquerez que la fonction
+					<code>JSON.parse()</code> a aussi été utilisée dans cette partie :
+					<code><pre> let responseJSON = JSON.parse(requete.responseText);
+ let expressionTraduite = responseJSON[0][0][0];</pre></code> pour convertir la réponse
+					texte du service Google en un objet Javascript.</p>
+				<div class="experiment">
+					<b>En examinant</b>
+					<code>responseJSON</code> vérifiez que
+					<code>responseJSON[0][0][0]</code> contient bien l'expressionTraduite que l'on recherche.
+					</div>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 1 - Affichage des traductions stockées localement</h3>
+				<p>Pour l'instant les traductions stockées s'affichent dans la console.</p>
+				<p>Faites en sorte qu'elles s'affichent dorénavant dans un tableau HTML, comme sur
+					la maquette.</p>
+				<p>Le tableau sera mis à jour à chaque nouvelle traduction et affichera le contenu
+					de la variable
+					<code>traductionsLocales</code>.</p>
+				<p> Écrivez donc une fonction
+					<code>afficherTableauTraductions()</code> qui créer un tableau HTML avec le contenu
+					de
+					<code>traductionsLocales</code>.</p>
+				<p>Il y a plusieurs façons de créer ce tableau :</p>
+				<ul>
+					<li>Soit vous créez une première ligne du tableau dans le fichier HTML, que vous
+						clonez (
+						<code>element.cloneNode()</code>) autant de fois que nécessaire et dont vous remplissez
+						les cellules par les traductions locales ;</li>
+					<li>Soit vous fabriquez une grande chaîne de caractères qui contient toutes les
+						balises HTML du tableau que vous injectez dans un
+						<code>innerHTML</code> ; </li>
+					<li>Soit enfin, en créant de toute pièce les noeuds d'un tableau avec des appels
+						à
+						<code>createElement("table")</code>,
+						<code>createElement("tr")</code> et
+						<code>createElement("td")</code> et en ajoutant ces noeuds au bon endroit (
+						<code>pere.appendChild(fils)</code>).</li>
+				</ul>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 2 - Choix des langues de traduction</h3>
+				<p>Ajoutez des listes déroulantes permettant de choisir une dizaine de langues source
+					et destination
+					<a href="https://cloud.google.com/translate/docs/languages">parmi celles disponibles</a>.</p>
+				<p>Modifiez le code pour que les langues soient prises en compte dans la traduction.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 3 - Pas de traduction</h3>
+				<p>Si l'expression saisie n'admet pas de traduction :</p>
+				<ul>
+					<li>affichez un message à l'utilisateur ;</li>
+					<li>ne stockez pas l'expression dans le stockage local.</li>
+				</ul>
+				<p class="astuce">Examinez la réponse du service de traduction pour différents mots pour déterminer
+					quand il n'y a pas de traduction.</p>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 4 - Recherche dans les traductions locales</h3>
+				<p>Pour accélérer les traductions et limiter les appels au service distant, à chaque
+					caractère saisi vous afficherez dans le tableau les expressions qui contiennent
+					la chaîne de caractères courante pour les mêmes langues source et destination.</p>
+				<p>Si l'expression saisie est déjà dans le tableau de traduction, alors la requête
+					ne sera pas envoyée.</p>
+				<p>La fonction
+					<code>includes()</code> vous intéressera certainement :</p> <pre><code>"Bonjour".includes("jo"); // renvoie true !</code></pre>
+				<!-- --------------------------------------------------------------- -->
+				<h3>Étape 5 - Suppression de traductions locales</h3>
+				<p>Ajouter une colonne au tableau pour y insérer une case à cocher en début de chaque
+					ligne.</p>
+				<p>Ajoutez un bouton pour supprimer toutes les lignes sélectionnées du stockage
+					local.</p>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<br /> </div>
+			<!-- End Grid -->
+	</article>
+	<!-- Javascript -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- <script src="http://bjobard.perso.univ-pau.fr/Assets/Scripts/jquery-2.1.4.min.js"></script> -->
+	<script src="http://bjobard.perso.univ-pau.fr/Assets/Scripts/jquery.inc-7.js"></script>
+	<script type="text/javascript" src="http://bjobard.perso.univ-pau.fr/Assets/Styles/Prism/prism.js"></script>
+	<script type="text/javascript" src="http://bjobard.perso.univ-pau.fr/Assets/Styles/HTMLkickstart/js/kickstart.js"></script>
+</body>
+
+</html>
